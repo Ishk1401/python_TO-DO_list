@@ -22,9 +22,9 @@ def save_tasks(tasks):
 def show_tasks(tasks):
     """Display all tasks with numbers."""
     if not tasks:
-        print("\n✅ Your to-do list is empty.\n")
+        print("\n Your to-do list is empty.\n")
     else:
-        print("\n📝 Your Tasks:")
+        print("\n Your Tasks:")
         for i, task in enumerate(tasks, start=1):
             print(f"{i}. {task}")
         print()
@@ -34,9 +34,9 @@ def add_task(tasks):
     new_task = input("Enter the new task: ").strip()
     if new_task:
         tasks.append(new_task)
-        print("✅ Task added.")
+        print(" Task added.")
     else:
-        print("⚠️ Empty task not added.")
+        print(" Empty task not added.")
 
 def remove_task(tasks):
     """Remove a task by its number."""
@@ -47,11 +47,11 @@ def remove_task(tasks):
         num = int(input("Enter the task number to remove: "))
         if 1 <= num <= len(tasks):
             removed = tasks.pop(num - 1)
-            print(f"✅ Removed task: {removed}")
+            print(f" Removed task: {removed}")
         else:
-            print("⚠️ Invalid task number.")
+            print(" Invalid task number.")
     except ValueError:
-        print("⚠️ Please enter a valid number.")
+        print(" Please enter a valid number.")
 
 def main():
     """Main program loop."""
@@ -72,10 +72,10 @@ def main():
             remove_task(tasks)
         elif choice == "4":
             save_tasks(tasks)
-            print("👋 Goodbye! Tasks saved.")
+            print(" Goodbye! Tasks saved.")
             break
         else:
-            print("⚠️ Invalid choice. Please enter 1-4.")
+            print(" Invalid choice. Please enter 1-4.")
 
 if __name__ == "__main__":
     main()
